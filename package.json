@@ -11,15 +11,15 @@
     "format": "pnpm run -recursive -filter \"./apps/**\" prettier --write .",
     "prepare": "husky"
   },
-	"lint-staged": {
-		"*.{js,jsx,ts,tsx}": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{json,md,css,scss,html,yaml,yml}": [
-			"prettier --write"
-		]
-	},
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css,scss,html,yaml,yml}": [
+      "prettier --write"
+    ]
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -44,6 +44,7 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.0.8",
     "prettier": "^3.9.4",
-    "typescript-eslint": "^8.63.0"
+    "typescript-eslint": "^8.63.0",
+    "vitest": "^4.1.10"
   }
 }
