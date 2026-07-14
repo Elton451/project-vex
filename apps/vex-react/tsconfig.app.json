@@ -21,7 +21,21 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+		/* PATHING */
+		"baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@features/*": ["./src/features/*"],
+      "@lib/*": ["./lib/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@shared/assets/*": ["./src/shared/assets/*"],
+      "@shared/components/*": ["./src/shared/components/*"],
+      "@shared/hooks/*": ["./src/shared/hooks/*"],
+      "@shared/utils/*": ["./src/shared/utils/*"],
+      "@shared/components/ui/*": ["./src/shared/components/ui/*"]
+    }
   },
   "include": ["src"]
 }
