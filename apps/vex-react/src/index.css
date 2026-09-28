@@ -2,129 +2,331 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/inter";
+@import "@fontsource/cinzel/400.css";
+@import "@fontsource/cinzel/700.css";
+@import "@fontsource/im-fell-english/400.css";
+@import "@fontsource/im-fell-english/400-italic.css";
+@import "@fontsource-variable/orbitron";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-heading: var(--font-sans);
-    --font-sans: 'Inter Variable', sans-serif;
-    --color-sidebar-ring: var(--sidebar-ring);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar: var(--sidebar);
-    --color-chart-5: var(--chart-5);
-    --color-chart-4: var(--chart-4);
-    --color-chart-3: var(--chart-3);
-    --color-chart-2: var(--chart-2);
-    --color-chart-1: var(--chart-1);
-    --color-ring: var(--ring);
-    --color-input: var(--input);
-    --color-border: var(--border);
-    --color-destructive: var(--destructive);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-accent: var(--accent);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-muted: var(--muted);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-secondary: var(--secondary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-primary: var(--primary);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-popover: var(--popover);
-    --color-card-foreground: var(--card-foreground);
-    --color-card: var(--card);
-    --color-foreground: var(--foreground);
-    --color-background: var(--background);
-    --radius-sm: calc(var(--radius) * 0.6);
-    --radius-md: calc(var(--radius) * 0.8);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) * 1.4);
-    --radius-2xl: calc(var(--radius) * 1.8);
-    --radius-3xl: calc(var(--radius) * 2.2);
-    --radius-4xl: calc(var(--radius) * 2.6);
+  --font-heading: var(--font-sans);
+  --font-sans: "Inter Variable", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Tokens exclusivos do VTT — glow, fog e blur acompanham o tema ativo */
+  --color-glow: var(--glow-color);
+  --color-fog: var(--fog-color);
+  --blur-theme: var(--backdrop-blur);
+  --shadow-glow: var(--shadow-glow-value);
+  --shadow-elevated: var(--shadow-elevated-value);
 }
 
+/* ==========================================================================
+   NEUTRAL — tema padrão. Inter, indigo, cantos suaves, sombra discreta.
+   ========================================================================== */
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
-    --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --radius: 0.625rem;
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.145 0 0);
-    --sidebar-primary: oklch(0.205 0 0);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.97 0 0);
-    --sidebar-accent-foreground: oklch(0.205 0 0);
-    --sidebar-border: oklch(0.922 0 0);
-    --sidebar-ring: oklch(0.708 0 0);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #7c79f2;
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.94 0.03 275);
+  --accent-foreground: #34309e;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: #7c79f2;
+  --chart-1: #7c79f2;
+  --chart-2: #9a97f5;
+  --chart-3: #5b58d6;
+  --chart-4: #3d3ab0;
+  --chart-5: #26236e;
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: #7c79f2;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: #7c79f2;
+
+  --font-sans: "Inter Variable", sans-serif;
+  --glow-color: #7c79f2;
+  --glow-blur: 20px;
+  --fog-color: #dfe1f5;
+  --fog-opacity: 0.85;
+  --backdrop-blur: 8px;
+  --shadow-color: rgba(20, 20, 30, 0.1);
+  --shadow-glow-value: 0 0 var(--glow-blur)
+    color-mix(in oklch, var(--glow-color) 55%, transparent);
+  --shadow-elevated-value: 0 4px 16px var(--shadow-color);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --card: oklch(0.205 0 0);
-    --card-foreground: oklch(0.985 0 0);
-    --popover: oklch(0.205 0 0);
-    --popover-foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --secondary: oklch(0.269 0 0);
-    --secondary-foreground: oklch(0.985 0 0);
-    --muted: oklch(0.269 0 0);
-    --muted-foreground: oklch(0.708 0 0);
-    --accent: oklch(0.269 0 0);
-    --accent-foreground: oklch(0.985 0 0);
-    --destructive: oklch(0.704 0.191 22.216);
-    --border: oklch(1 0 0 / 10%);
-    --input: oklch(1 0 0 / 15%);
-    --ring: oklch(0.556 0 0);
-    --chart-1: oklch(0.87 0 0);
-    --chart-2: oklch(0.556 0 0);
-    --chart-3: oklch(0.439 0 0);
-    --chart-4: oklch(0.371 0 0);
-    --chart-5: oklch(0.269 0 0);
-    --sidebar: oklch(0.205 0 0);
-    --sidebar-foreground: oklch(0.985 0 0);
-    --sidebar-primary: oklch(0.488 0.243 264.376);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.269 0 0);
-    --sidebar-accent-foreground: oklch(0.985 0 0);
-    --sidebar-border: oklch(1 0 0 / 10%);
-    --sidebar-ring: oklch(0.556 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #9a97f5;
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: #9a97f5;
+  --chart-1: #9a97f5;
+  --chart-2: #7c79f2;
+  --chart-3: #5b58d6;
+  --chart-4: #3d3ab0;
+  --chart-5: #26236e;
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #9a97f5;
+  --sidebar-primary-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: #9a97f5;
+
+  --fog-color: #23253f;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
+
+/* ==========================================================================
+   FANTASY — Cinzel, pergaminho e ouro, cantos quadrados, brilho quente.
+   ========================================================================== */
+[data-theme="fantasy"] {
+  --background: #ede1c3;
+  --foreground: #3b2f1e;
+  --card: #f4ead0;
+  --card-foreground: #3b2f1e;
+  --popover: #f4ead0;
+  --popover-foreground: #3b2f1e;
+  --primary: #c8982a;
+  --primary-foreground: #2c2410;
+  --secondary: #d8c69a;
+  --secondary-foreground: #3b2f1e;
+  --muted: #ddd0ab;
+  --muted-foreground: #6b5a3c;
+  --accent: #b9852a;
+  --accent-foreground: #2c2410;
+  --destructive: #8c2f1a;
+  --border: #c3a35c;
+  --input: #c3a35c;
+  --ring: #c8982a;
+  --chart-1: #c8982a;
+  --chart-2: #a97b22;
+  --chart-3: #8a5f18;
+  --chart-4: #6b4610;
+  --chart-5: #4a2f08;
+  --radius: 0.25rem;
+  --sidebar: #e6d7ac;
+  --sidebar-foreground: #3b2f1e;
+  --sidebar-primary: #c8982a;
+  --sidebar-primary-foreground: #2c2410;
+  --sidebar-accent: #d8c69a;
+  --sidebar-accent-foreground: #3b2f1e;
+  --sidebar-border: #c3a35c;
+  --sidebar-ring: #c8982a;
+
+  --font-sans: "Cinzel", serif;
+  --glow-color: #c8982a;
+  --glow-blur: 14px;
+  --fog-color: #e8dcb8;
+  --fog-opacity: 0.9;
+  --backdrop-blur: 3px;
+  --shadow-color: rgba(90, 65, 20, 0.28);
+  --shadow-glow-value: 0 0 var(--glow-blur)
+    color-mix(in oklch, var(--glow-color) 60%, transparent);
+  --shadow-elevated-value:
+    0 3px 0 var(--border), 0 6px 14px var(--shadow-color);
+}
+
+[data-theme="fantasy"].dark {
+  --background: #241c10;
+  --foreground: #e8dcb8;
+  --card: #2d2415;
+  --card-foreground: #e8dcb8;
+  --popover: #2d2415;
+  --popover-foreground: #e8dcb8;
+  --secondary: #3a2e1a;
+  --secondary-foreground: #e8dcb8;
+  --muted: #332913;
+  --muted-foreground: #b6a172;
+  --border: #4d3d1e;
+  --input: #4d3d1e;
+  --sidebar: #1f180d;
+  --sidebar-foreground: #e8dcb8;
+  --sidebar-accent: #3a2e1a;
+  --sidebar-accent-foreground: #e8dcb8;
+  --sidebar-border: #4d3d1e;
+  --fog-color: #1a140b;
+}
+
+/* ==========================================================================
+   GOTHIC — IM Fell English, sangue e sombra, raio zero, brilho carmesim.
+   ========================================================================== */
+[data-theme="gothic"] {
+  --background: #0d0507;
+  --foreground: #e7d8d8;
+  --card: #170a0d;
+  --card-foreground: #e7d8d8;
+  --popover: #170a0d;
+  --popover-foreground: #e7d8d8;
+  --primary: #ae0032;
+  --primary-foreground: #f5e6e9;
+  --secondary: #2a1116;
+  --secondary-foreground: #e7d8d8;
+  --muted: #241014;
+  --muted-foreground: #9c7f84;
+  --accent: #7a0021;
+  --accent-foreground: #f5e6e9;
+  --destructive: #ff1f4d;
+  --border: #3a1a20;
+  --input: #3a1a20;
+  --ring: #ae0032;
+  --chart-1: #ae0032;
+  --chart-2: #870027;
+  --chart-3: #64001d;
+  --chart-4: #430013;
+  --chart-5: #22000a;
+  --radius: 0rem;
+  --sidebar: #120709;
+  --sidebar-foreground: #e7d8d8;
+  --sidebar-primary: #ae0032;
+  --sidebar-primary-foreground: #f5e6e9;
+  --sidebar-accent: #2a1116;
+  --sidebar-accent-foreground: #e7d8d8;
+  --sidebar-border: #3a1a20;
+  --sidebar-ring: #ae0032;
+
+  --font-sans: "IM Fell English", serif;
+  --glow-color: #ae0032;
+  --glow-blur: 34px;
+  --fog-color: #1a0a0d;
+  --fog-opacity: 0.95;
+  --backdrop-blur: 2px;
+  --shadow-color: rgba(0, 0, 0, 0.65);
+  --shadow-glow-value: 0 0 var(--glow-blur)
+    color-mix(in oklch, var(--glow-color) 70%, transparent);
+  --shadow-elevated-value: 0 6px 22px var(--shadow-color);
+}
+
+/* Gótico não tem variante clara — a atmosfera é sempre noturna. */
+
+/* ==========================================================================
+   SCI-FI — Orbitron, azul profundo e ciano, blur no máximo, glow técnico.
+   ========================================================================== */
+[data-theme="scifi"] {
+  --background: #050b18;
+  --foreground: #d6f5f1;
+  --card: #0a1526;
+  --card-foreground: #d6f5f1;
+  --popover: #0a1526;
+  --popover-foreground: #d6f5f1;
+  --primary: #00d8bc;
+  --primary-foreground: #012620;
+  --secondary: #0f2036;
+  --secondary-foreground: #d6f5f1;
+  --muted: #0d1c30;
+  --muted-foreground: #6f97a3;
+  --accent: #00b8a0;
+  --accent-foreground: #012620;
+  --destructive: #ff4d6d;
+  --border: #163050;
+  --input: #163050;
+  --ring: #00d8bc;
+  --chart-1: #00d8bc;
+  --chart-2: #00aa96;
+  --chart-3: #007c6f;
+  --chart-4: #16b8e0;
+  --chart-5: #0d84a3;
+  --radius: 0.1875rem;
+  --sidebar: #071021;
+  --sidebar-foreground: #d6f5f1;
+  --sidebar-primary: #00d8bc;
+  --sidebar-primary-foreground: #012620;
+  --sidebar-accent: #0f2036;
+  --sidebar-accent-foreground: #d6f5f1;
+  --sidebar-border: #163050;
+  --sidebar-ring: #00d8bc;
+
+  --font-sans: "Orbitron Variable", sans-serif;
+  --glow-color: #00d8bc;
+  --glow-blur: 40px;
+  --fog-color: #0a2035;
+  --fog-opacity: 0.4;
+  --backdrop-blur: 24px;
+  --shadow-color: rgba(0, 216, 188, 0.18);
+  --shadow-glow-value: 0 0 var(--glow-blur)
+    color-mix(in oklch, var(--glow-color) 65%, transparent);
+  --shadow-elevated-value: 0 0 1px var(--ring), 0 8px 24px var(--shadow-color);
+}
+
+/* Sci-Fi não tem variante clara — a interface é sempre um painel de comando. */
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
   html {
     @apply font-sans;
-    }
+  }
 }
